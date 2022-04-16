@@ -167,8 +167,9 @@ async function deleteCamisa(id) {
 
   const result = await response.json();
   alert(result.message);
-  fecharModalDelete();
-  findAllCamisas();
 
   document.querySelector("#camisaList").innerHTML = "";
+
+  fecharModalDelete();
+  findAllCamisas();
 }
