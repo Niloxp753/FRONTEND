@@ -20,20 +20,22 @@ html {
 
 .Home {
     position: relative;
-    background: linear-gradient(-45deg, #222831dc, #393E46, #00ADB5, #EEEEEE);
-    background-size: 200% 82%;
+    background: linear-gradient(-45deg, #072227, #35858B, #00ADB5, #EEEEEE);
+    background-size: 300% 200%;
     min-height: calc(100vh - 60px);
     margin: 15px;
     padding: 15px;
     border-radius: 20px;
     color: #000;
     box-shadow: 0px 0px 15px #0000004d;
-    animation: colors 17s ease-in-out infinite;
+    animation: colors 15s ease-in infinite;
 }
 
 .Home>h2 {
     display: flex;
     justify-content: space-around;
+    font-weight: 600;
+    font-size: xx-large;
     color: #000;
 }
 
@@ -44,7 +46,7 @@ html {
 }
 
 .Home__cardCreate {
-    background: #ffffff4d;
+    background: #cccbcb;
     border-radius: 10px;
     padding: 10px;
     height: 200px;
@@ -96,7 +98,7 @@ html {
 
 .CamisaCardItem,
 .CamisaListaItem {
-    background: #ffffff4d;
+    background: #cccbcb;
     border-radius: 10px;
     padding: 10px;
     width: 315px;
@@ -157,7 +159,7 @@ html {
     font-size: 1.5em;
     font-weight: 700;
     line-height: 100%;
-    text-shadow: 2px 2px 2px #04857a;
+    text-shadow: 2px 2px 2px #fff;
 }
 
 .CamisaCardItem__descricao,
@@ -195,7 +197,7 @@ html {
 
 .default-button {
     background-color: transparent;
-    border: 2px solid #04787e;
+    border: 2px solid #000000;
     padding: 0.4rem;
     color: #000000;
     font-weight: 550;
@@ -208,7 +210,7 @@ html {
 }
 
 .default-button:hover {
-    background-color: #00ADB5;
+    background-color: #06767c;
     color: #ffffff;
     text-shadow: 2px 2px 2px #000;
 }
@@ -393,14 +395,14 @@ textarea {
     font-size: 1rem;
     background-color: transparent;
     color: #000000;
-    border: solid 1.5px #04787e;
+    border: solid 1.5px #000000;
     border-radius: .3rem;
     cursor: pointer;
     font-weight: 550;
 }
 
 .modal-body form button:hover {
-    background-color: #00ADB5;
+    background-color: #06767c;
     color: #fff;
 }
 
