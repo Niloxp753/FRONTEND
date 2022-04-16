@@ -20,15 +20,15 @@ html {
 
 .Home {
     position: relative;
-    background-image: radial-gradient(farthest-corner at 40px 40px,
-            #04857a 60%,
-            #202026 100%);
+    background: linear-gradient(-45deg, #222831dc, #393E46, #00ADB5, #EEEEEE);
+    background-size: 200% 82%;
     min-height: calc(100vh - 60px);
     margin: 15px;
     padding: 15px;
     border-radius: 20px;
     color: #000;
     box-shadow: 0px 0px 15px #0000004d;
+    animation: colors 17s ease-in-out infinite;
 }
 
 .Home>h2 {
@@ -115,12 +115,33 @@ html {
     width: 315px;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 375px) {
 
     .CamisaCardItem,
-    .CamisaListaItem {
+    .CamisaListaItem,
+    .Home__cardCreate {
         height: 180px;
-        width: 210px;
+        width: 315px;
+    }
+
+    footer p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-size: large;
+        font-weight: 600;
+    }
+}
+
+@media (max-width: 420px){
+    footer p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-size: large;
+        font-weight: 600;
     }
 }
 
@@ -174,20 +195,20 @@ html {
 
 .default-button {
     background-color: transparent;
-    border: 2px solid #06dbc9cb;
+    border: 2px solid #04787e;
     padding: 0.4rem;
-    color: #06dbca;
-    font-weight: 600;
+    color: #000000;
+    font-weight: 550;
     border-radius: 0.2rem;
     width: 315px;
     margin-top: 0.5rem;
     cursor: pointer;
     font-size: 1rem;
-    text-shadow: 2px 2px 2px #000;
+    text-shadow: 2px 2px 2px #fff;
 }
 
 .default-button:hover {
-    background-color: #06dbc9cb;
+    background-color: #00ADB5;
     color: #ffffff;
     text-shadow: 2px 2px 2px #000;
 }
@@ -227,6 +248,7 @@ html {
     font-weight: 700;
     font-size: 2.2rem;
     text-shadow: 2px 2px 2px #ffffff;
+    
 }
 
 .Logo__icone {
@@ -249,7 +271,7 @@ html {
 }
 
 .Sacola__badge {
-    background-color: red;
+    background-color: #770909;
     width: 20px;
     height: 20px;
     text-align: center;
@@ -343,6 +365,8 @@ html {
 
 .modal-body {
     padding: .5rem 1rem;
+    background: linear-gradient(-45deg, #222831, #393E46, #00ADB5, #EEEEEE);
+    background-size: 200% 100%;
 }
 
 .modal-body form {
@@ -358,7 +382,7 @@ textarea {
     padding: .5rem;
     font-size: .8rem;
     outline: none;
-    border: solid 1px #202026;
+    border: solid 1.5px #202026;
     margin-bottom: .4rem;
     border-radius: .3rem;
 }
@@ -368,15 +392,15 @@ textarea {
     width: 30%;
     font-size: 1rem;
     background-color: transparent;
-    color: #066d64;
-    border: solid 1px #066d64;
+    color: #000000;
+    border: solid 1.5px #04787e;
     border-radius: .3rem;
     cursor: pointer;
     font-weight: 550;
 }
 
 .modal-body form button:hover {
-    background-color: #066d64;
+    background-color: #00ADB5;
     color: #fff;
 }
 
@@ -404,30 +428,34 @@ textarea {
 }
 
 .Acoes__editar {
-    color: #0000ff;
-    border: solid 1px #0000ff;
+    color: #09097c;
+    border: solid 1.5px #09097c;
     background-color: transparent;
 }
 
 .Acoes__editar:hover {
     color: #fff;
-    background-color: #0000ff;
+    background-color: #09097c;
 }
 
 .Acoes__apagar {
-    color: #ff0000;
-    border: solid 1px #ff0000;
+    color: #770909;
+    border: solid 1.5px #770909;
     background-color: transparent;
 }
 
 .Acoes__apagar:hover {
     color: #fff;
-    background-color: #ff0000;
+    background-color: #770909;
 }
 
 .modal-body-delete {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(-45deg, #222831, #393E46, #00ADB5, #EEEEEE);
+    background-size: 200% 100%;
 }
 
 .modal-body-delete p {
@@ -449,28 +477,29 @@ textarea {
     font-size: 1.2rem;
     border-radius: 0.5rem;
     width: 30%;
+    height: 50%;
     cursor: pointer;
 }
 
 .btn_delete_no {
-    color: #ff0000;
-    border: solid 1px #ff0000;
+    color: #770909;
+    border: solid 1.5px #770909;
 }
 
 .btn_delete_no:hover {
     color: #fff;
-    background-color: #ff0000;
+    background-color: #770909;
 }
 
 .btn_delete_yes {
-    color: #036d03;
-    border: solid 1px #036d03;
+    color: #09097c;
+    border: solid 1.5px #09097c;
 
 }
 
 .btn_delete_yes:hover {
     color: #fff;
-    background-color: #036d03;
+    background-color: #09097c;
 }
 
 footer {
@@ -480,13 +509,22 @@ footer {
     font-weight: 550;
     font-size: large;
     position: relative;
-    background-image: radial-gradient(farthest-corner at 30px 30px,
-            #04857a 20%,
-            #202026 100%);
     min-height: 60px;
-    margin: 0px 15px 15px 15px;
-    padding: 15px;
     border-radius: 20px;
     color: #000;
     box-shadow: 0px 0px 15px #0000004d;
+}
+
+@keyframes colors {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
