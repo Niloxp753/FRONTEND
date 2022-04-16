@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/style.css">
+  <title>Team Shirt</title>
+</head>
+
+<body>
+  <section class="Home">
+
+    <header class="Home__header Header">
+      <div class="row">
+        <div class="Header__logo Logo">
+          <img src="./assets/logo.png" width="70px" alt="Logo La Loja" class="Logo__icone" />
+          <span class="Logo__titulo"> Team Shirt </span>
+        </div>
+
+        <div class="Header__opcoes Opcoes">
+          <div class="Opcoes__sacola Sacola">
+            <img src="./assets/icons/sacola.svg" width="40px" class="Sacola__icone" alt="Sacola de compras" />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="modal-overlay" id="overlay">
+
+      <div class="modal">
+
+        <div class="modal-header">
+          <h2 id="title-header-modal">Cadastrar uma camisa</h2>
+          <a class="close-modal" onclick="fecharModal()">X</a>
+        </div>
+
+        <div class="modal-body">
+          <form>
+            <input type="hidden" id="id">
+            <input type="text" name="modelo" id="modelo" placeholder="Modelo da Camisa (Ex: Camisa do 'Time')">
+            <input type="text" name="preco" id="preco" placeholder="Preço da Camisa (Ex: R$ 199,99)">
+            <textarea type="text" name="descricao" id="descricao" placeholder="Descrição da Camisa" rows="5"></textarea>
+            <input type="text" name="foto" id="foto" placeholder="Link da Imagem (Ex: http://)">
+            <button id="button-form-modal" type="submit" onclick="createCamisa()">Cadastrar</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="modal-overlay" id="overlay-delete">
+      <div class="modal">
+        <div class="modal-header">
+          <h2 id="title-header-modal">Confirmação de deleção</h2>
+          <a onclick="fecharModalDelete()" class="close-modal">X</a>
+        </div>
+        <div class="modal-body-delete">
+          <p>Deseja realmente apagar essa camisa? </p>
+          <div class="btns_delete">
+            <button class="btn_delete_no btn_delete" onclick="fecharModalDelete()">Não</button>
+            <button class="btn_delete_yes btn_delete">Sim</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <h2>Pesquisar Camisa</h2>
+    <div class="camisa-escolhida-espaco">
+      <div id="camisa-escolhida-input-espaco">
+        <input type="number" id="idCamisa" placeholder="Digite o ID da camisa e clique em 'Escolher'" />
+        <button class="default-button" onclick="findByIdCamisas()">ESCOLHER</button>
+      </div>
+      <div id="camisaEscolhida">
+      </div>
+    </div>
+
+    <h2>Camisas Disponíveis:</h2>
+    <div class="Home__container">
+      <div class="camisaLista" id="camisaList">
+        <div class="Home__cardCreate" onclick="abrirModal()">
+          <section class="button-modal-create">
+            <a class="fake-card" type="button" onclick="abrirModal()">
+              <img
+                src="https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/38/000000/external-plus-user-interface-tanah-basah-glyph-tanah-basah-2.png"
+                alt="Criar">
+            </a>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <p>All rights reserved <a target="_blank" href="https://github.com/Niloxp753">Danilo D. Dos Santos &copy;</a></p>
+  </footer>
+</body>
+<script src="./assets/script.js"></script>
+
+</html>

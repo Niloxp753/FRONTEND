@@ -1,0 +1,492 @@
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: Exo, sans-serif;
+    transition: all .3s ease-in-out;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body,
+html {
+    width: 100%;
+    min-height: 100vh;
+    overflow: auto;
+    background-color: #0000004d;
+}
+
+.Home {
+    position: relative;
+    background-image: radial-gradient(farthest-corner at 40px 40px,
+            #04857a 60%,
+            #202026 100%);
+    min-height: calc(100vh - 60px);
+    margin: 15px;
+    padding: 15px;
+    border-radius: 20px;
+    color: #000;
+    box-shadow: 0px 0px 15px #0000004d;
+}
+
+.Home>h2 {
+    display: flex;
+    justify-content: space-around;
+    color: #000;
+}
+
+.Home>header {
+    display: flex;
+    justify-content: center;
+    color: #000;
+}
+
+.Home__cardCreate {
+    background: #ffffff4d;
+    border-radius: 10px;
+    padding: 10px;
+    height: 200px;
+    width: 315px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    box-shadow: 10px 5px 5px #000;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+.Home__cardCreate:hover {
+    transform: scale(1.1);
+}
+
+
+.Home__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+@media (max-width: 350px) {
+    .Home__container {
+        justify-content: unset;
+    }
+}
+
+.camisaLista {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 25px 50px;
+}
+
+@media (max-width: 1220px) {
+    .camisaLista {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 840px) {
+    .camisaLista {
+        grid-template-columns: 1fr;
+    }
+}
+
+.CamisaCardItem,
+.CamisaListaItem {
+    background: #ffffff4d;
+    border-radius: 10px;
+    padding: 10px;
+    width: 315px;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 10px 5px 5px #000;
+}
+
+.CamisaCardItem:hover,
+.CamisaListaItem:hover {
+    transform: scale(1.1);
+}
+
+.CamisaCardItem {
+    margin: 20px 0;
+    width: 315px;
+}
+
+@media (max-width: 400px) {
+
+    .CamisaCardItem,
+    .CamisaListaItem {
+        height: 180px;
+        width: 210px;
+    }
+}
+
+.CamisaCardItem>div,
+.CamisaListaItem>div {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.CamisaCardItem__modelo,
+.CamisaListaItem__modelo {
+    font-size: 1.5em;
+    font-weight: 700;
+    line-height: 100%;
+    text-shadow: 2px 2px 2px #04857a;
+}
+
+.CamisaCardItem__descricao,
+.CamisaListaItem__descricao {
+    font-size: 0.85em;
+    list-style: none;
+}
+
+.CamisaCardItem__preco,
+.CamisaListaItem__preco {
+    color: #ffffff;
+    text-shadow: 2px 2px 2px #000;
+}
+
+.CamisaListaItem__foto,
+.CamisaCardItem__foto {
+    height: 180px;
+    margin-right: -60px;
+}
+
+.camisa-escolhida-espaco {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+#idCamisa {
+    padding: .5rem;
+    width: 315px;
+    border: none;
+    border-radius: .2rem;
+    outline: none;
+}
+
+.default-button {
+    background-color: transparent;
+    border: 2px solid #06dbc9cb;
+    padding: 0.4rem;
+    color: #06dbca;
+    font-weight: 600;
+    border-radius: 0.2rem;
+    width: 315px;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    text-shadow: 2px 2px 2px #000;
+}
+
+.default-button:hover {
+    background-color: #06dbc9cb;
+    color: #ffffff;
+    text-shadow: 2px 2px 2px #000;
+}
+
+#camisa-escolhida-input-espaco {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.Header {
+    max-width: 1110px;
+    margin: 0 auto 25px auto;
+    position: relative;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin: 20px 0 35px 0;
+}
+
+.Logo {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #ffffff4d;
+    width: 340px;
+    height: 45px;
+}
+
+.Logo__titulo {
+    position: absolute;
+    left: 65px;
+    font-weight: 700;
+    font-size: 2.2rem;
+    text-shadow: 2px 2px 2px #ffffff;
+}
+
+.Logo__icone {
+    position: absolute;
+    left: -10px;
+    top: -6px;
+    filter: invert(1);
+}
+
+.Sacola {
+    position: relative;
+}
+
+.Sacola__icone {
+    cursor: pointer;
+}
+
+.Sacola__icone:hover {
+    filter: invert(1);
+}
+
+.Sacola__badge {
+    background-color: red;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    color: #ffffff;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    bottom: 0;
+    right: 0;
+}
+
+@media (max-width: 1220px) {
+    .Header {
+        max-width: 720px;
+    }
+}
+
+@media (max-width: 840px) {
+    .Header {
+        max-width: 320px;
+    }
+}
+
+@media (max-width: 400px) {
+    .Header {
+        max-width: 250px;
+    }
+
+    .row {
+        column-gap: 20px;
+    }
+
+    .Logo__titulo {
+        font-size: 1.5em;
+    }
+}
+
+.modal-overlay {
+    background-color: #00000050;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.modal {
+    margin: 1rem;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    min-height: 300px;
+    background-color: #fff;
+    border-radius: .8rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: radial-gradient(farthest-corner at 40px 40px,
+            #04857a 60%,
+            #202026 100%);
+    padding: 1rem;
+}
+
+.close-modal {
+    color: #000;
+    font-size: 1.5rem;
+    transform: scale(0.8);
+    font-weight: 550;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    transform: scale(1);
+
+}
+
+.modal-body {
+    padding: .5rem 1rem;
+}
+
+.modal-body form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-body form input,
+textarea {
+    width: 100%;
+    padding: .5rem;
+    font-size: .8rem;
+    outline: none;
+    border: solid 1px #202026;
+    margin-bottom: .4rem;
+    border-radius: .3rem;
+}
+
+.modal-body form button {
+    padding: .5rem;
+    width: 30%;
+    font-size: 1rem;
+    background-color: transparent;
+    color: #066d64;
+    border: solid 1px #066d64;
+    border-radius: .3rem;
+    cursor: pointer;
+    font-weight: 550;
+}
+
+.modal-body form button:hover {
+    background-color: #066d64;
+    color: #fff;
+}
+
+.button-modal-create {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.Acoes {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: .5rem;
+}
+
+.btn {
+    color: #fff;
+    border-radius: .3rem;
+    padding: .5rem;
+    max-width: 280px;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 48%;
+}
+
+.Acoes__editar {
+    color: #0000ff;
+    border: solid 1px #0000ff;
+    background-color: transparent;
+}
+
+.Acoes__editar:hover {
+    color: #fff;
+    background-color: #0000ff;
+}
+
+.Acoes__apagar {
+    color: #ff0000;
+    border: solid 1px #ff0000;
+    background-color: transparent;
+}
+
+.Acoes__apagar:hover {
+    color: #fff;
+    background-color: #ff0000;
+}
+
+.modal-body-delete {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.modal-body-delete p {
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.btns_delete {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btn_delete {
+    background-color: transparent;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    width: 30%;
+    cursor: pointer;
+}
+
+.btn_delete_no {
+    color: #ff0000;
+    border: solid 1px #ff0000;
+}
+
+.btn_delete_no:hover {
+    color: #fff;
+    background-color: #ff0000;
+}
+
+.btn_delete_yes {
+    color: #036d03;
+    border: solid 1px #036d03;
+
+}
+
+.btn_delete_yes:hover {
+    color: #fff;
+    background-color: #036d03;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 550;
+    font-size: large;
+    position: relative;
+    background-image: radial-gradient(farthest-corner at 30px 30px,
+            #04857a 20%,
+            #202026 100%);
+    min-height: 60px;
+    margin: 0px 15px 15px 15px;
+    padding: 15px;
+    border-radius: 20px;
+    color: #000;
+    box-shadow: 0px 0px 15px #0000004d;
+}
