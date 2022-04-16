@@ -121,6 +121,15 @@ async function createCamisa() {
   const html = `
   <div class="CamisaListaItem" id="CamisaListaItem_${camisa.id}">
     <div>
+    <div class="Home__cardCreate" onclick="abrirModal()">
+          <section class="button-modal-create">
+            <a class="fake-card" type="button" onclick="abrirModal()">
+              <img
+                src="https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/38/000000/external-plus-user-interface-tanah-basah-glyph-tanah-basah-2.png"
+                alt="Criar">
+            </a>
+          </section>
+        </div>
       <div class="CamisaListaItem__modelo">${novaCamisa.modelo}</div>
       <div class="CamisaListaItem__preco">${novaCamisa.preco}</div>
       <li class="CamisaListaItem__descricao">${novaCamisa.descricao}</li>
@@ -167,9 +176,8 @@ async function deleteCamisa(id) {
 
   const result = await response.json();
   alert(result.message);
-
-  document.querySelector("#camisaList").innerHTML = "";
-
   fecharModalDelete();
-  findAllCamisas();
+
+  document.location.reload(true);
+  
 }
