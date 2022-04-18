@@ -4,11 +4,11 @@
 
 Desenvolver uma aplicação que exibirá um cardápio.
 
-Nela será possível visualizar:
-o modelo do produto;
-a foto do produto;
-o valor do produto;
-uma breve descrição sobre o produto;
+<li> Nela será possível visualizar: </li>
+<li> O modelo do produto; </li>
+<li> A foto do produto; </li>
+<li> O valor do produto; </li>
+<li> uma breve descrição sobre o produto; </li>
 Com ela também poderemos adicionar novos produto, alterar e excluir.
 Essa aplicação consistirá em um CRUD completo no backend em nodeJs, utilizando o framework express, além de introduzir novos aspectos como as camadas de routes e service que, em conjunto com o controller, deixarão a nossa aplicação mais organizada e de fácil manutenção.
 
