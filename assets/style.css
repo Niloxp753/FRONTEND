@@ -8,6 +8,7 @@
     transition: all .3s ease-in-out;
     box-sizing: border-box;
     text-decoration: none;
+    list-style: none;
 }
 
 body,
@@ -15,19 +16,28 @@ html {
     width: 100%;
     min-height: 100vh;
     overflow: auto;
-    background-color: #0000004d;
+    /* background-color: #0000004d; */
+    background: linear-gradient(-45deg, #072227, #35858B, #00ADB5, #EEEEEE);
+    background-size: 300% 200%;
+    animation: colors 15s ease-in infinite;
 }
 
 .Home {
     position: relative;
-    background: linear-gradient(-45deg, #072227, #35858B, #00ADB5, #EEEEEE);
-    background-size: 300% 200%;
     min-height: calc(100vh - 60px);
     margin: 15px;
-    padding: 15px;
     border-radius: 20px;
     color: #000;
-    box-shadow: 0px 0px 15px #0000004d;
+}
+
+header {
+    display: flex;
+    width: 100vw;
+    
+    background-size: 300% 200%;
+    border-radius: 20px;
+    margin-top: 55px;
+    color: #000;
     animation: colors 15s ease-in infinite;
 }
 
@@ -37,12 +47,8 @@ html {
     font-weight: 600;
     font-size: xx-large;
     color: #000;
-}
-
-.Home>header {
-    display: flex;
-    justify-content: center;
-    color: #000;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 2px #ffffff;
 }
 
 .Home__cardCreate {
@@ -230,8 +236,10 @@ html {
 
 .row {
     display: flex;
+    flex-direction: row;
     width: 100%;
     justify-content: space-between;
+    align-items: center;
     margin: 20px 0 35px 0;
 }
 
@@ -240,6 +248,7 @@ html {
     align-items: center;
     border-radius: 10px;
     background-color: #ffffff4d;
+    gap: 20px;
     width: 340px;
     height: 45px;
 }
@@ -291,19 +300,22 @@ html {
 
 @media (max-width: 1220px) {
     .Header {
-        max-width: 720px;
+        margin: 0 auto 25px auto;
+        max-width: 840px;
     }
 }
 
 @media (max-width: 840px) {
     .Header {
-        max-width: 320px;
+        margin: 0 auto 25px auto;
+        max-width: 360px;
     }
 }
 
 @media (max-width: 400px) {
     .Header {
-        max-width: 250px;
+        margin: 0 auto 25px auto;
+        max-width: 320px;
     }
 
     .row {
@@ -529,4 +541,84 @@ footer {
     100% {
         background-position: 0% 50%;
     }
+}
+
+.Header__opcoes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.Menu_NavBar {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    z-index: 2;
+}
+
+.Menu_icone {
+    margin-top: 5px;
+    filter: invert(1);
+    cursor: pointer;
+}
+
+.Menu_icone:hover {
+    filter: invert(0);
+}
+
+nav.menu-items {
+    display: flex;
+    justify-content: center;
+    background: #393E46;
+    width: 25vw;
+    height: 100vh;
+    display: none;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    right: 0;
+    text-align: center; 
+}
+
+#top_inicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-color: #000303;
+    height: 25px;
+    width: 140px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#btn_nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+
+#top_inicio:hover {
+    background-color: #04857a;
+    color: #fff;
+}
+
+#top_criar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-color: #000303;
+    height: 25px;
+    width: 140px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#top_criar:hover {
+    background-color: #04857a;
+    color: #fff;
 }

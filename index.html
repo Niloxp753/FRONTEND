@@ -10,22 +10,30 @@
 </head>
 
 <body>
-  <section class="Home">
 
-    <header class="Home__header Header" >
-      <div class="row">
-        <div class="Header__logo Logo">
-          <img src="./assets/logo.png" width="70px" alt="Logo La Loja" class="Logo__icone" />
-          <span class="Logo__titulo"> Team Shirt </span>
+  <header class="Home__header Header">
+    <div class="row">
+      <div class="Header__logo Logo">
+        <img src="./assets/logo.png" width="70px" alt="Logo La Loja" class="Logo__icone" />
+        <span class="Logo__titulo"> Team Shirt </span>
+      </div>
+      <div class="Header__opcoes Opcoes">
+        <div class="Opcoes__sacola Sacola">
+          <img src="./assets/icons/sacola.svg" width="40px" class="Sacola__icone" alt="Sacola de compras" />
         </div>
-
-        <div class="Header__opcoes Opcoes">
-          <div class="Opcoes__sacola Sacola">
-            <img src="./assets/icons/sacola.svg" width="40px" class="Sacola__icone" alt="Sacola de compras" />
-          </div>
+        <div class="Menu_NavBar">
+          <img src="./assets/icons/menu.png" width="36px" class="Menu_icone" alt="Menu">
         </div>
       </div>
-    </header>
+    </div>
+    <nav class="menu-items">
+      <div id="btn_nav">
+        <a id="top_inicio" href="/"> Inicio </a>
+        <a id="top_criar" onclick="abrirModal()"> Criar </a>
+      </div>
+    </nav>
+  </header>
+  <section class="Home">
 
     <section class="modal-overlay" id="overlay">
 
@@ -75,7 +83,7 @@
       </div>
     </div>
 
-    <h2>Camisas Disponíveis:</h2>
+    <h2>Camisas Disponíveis</h2>
     <div class="Home__container">
       <div class="camisaLista" id="camisaList">
         <div class="Home__cardCreate" onclick="abrirModal()">

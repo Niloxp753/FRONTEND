@@ -179,5 +179,35 @@ async function deleteCamisa(id) {
   fecharModalDelete();
 
   document.location.reload(true);
-  
+}
+
+let toggle = false;
+const img = document.querySelector(".Menu_NavBar");
+const nav = document.querySelector(".menu-items");
+const section = document.querySelector("section");
+const criar = document.querySelector("#top_criar");
+
+img.addEventListener("click", () => {
+  handleModal();
+  if (toggle) {
+    section.style.opacity = "0.5";
+    nav.style.display = "flex";
+    nav.style.zIndex = "1";
+    img.style.zIndex = "2";
+    img.style.position = "fixed";
+    criar.addEventListener("click", () => {
+      toggle = !toggle
+      nav.style.display = "none";
+      section.style.opacity = "1";
+      img.style.position = "relative";
+    });
+  } else {
+    nav.style.display = "none";
+    section.style.opacity = "1";
+    img.style.position = "relative";
+  }
+});
+
+function handleModal() {
+  toggle = !toggle;
 }
