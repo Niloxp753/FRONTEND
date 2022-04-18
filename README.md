@@ -9,10 +9,10 @@ Nela será possível visualizar:
 <li> A foto do produto; </li>
 <li> O valor do produto; </li>
 <li> uma breve descrição sobre o produto; </li>
-##Com ela também poderemos adicionar novos produto, alterar e excluir.
+Com ela também poderemos adicionar novos produto, alterar e excluir.
 Essa aplicação consistirá em um CRUD completo no backend em nodeJs, utilizando o framework express, além de introduzir novos aspectos como as camadas de routes e service que, em conjunto com o controller, deixarão a nossa aplicação mais organizada e de fácil manutenção.
 
-<img align="center" alt="TeamShirt" height="200" width="500" src="https://user-images.githubusercontent.com/97798047/163739821-5ce30013-4947-4837-865c-a20720e1c38b.png">
+## <img align="center" alt="TeamShirt" height="200" width="500" src="https://user-images.githubusercontent.com/97798047/163739821-5ce30013-4947-4837-865c-a20720e1c38b.png">
 
 <img align="center" alt="TeamShirt" height="200" width="500" src="https://user-images.githubusercontent.com/97798047/163739860-296436b7-7247-4c86-9849-930bd221ee8c.png">
 
