@@ -1,8 +1,5 @@
 # Projeto ToDoList - Entrega 1 - BlueEdtech
 
-<img align="center" alt="TeamShirt" height="200" width="500" src="https://user-images.githubusercontent.com/97798047/163739821-5ce30013-4947-4837-865c-a20720e1c38b.png">
-<img align="center" alt="TeamShirt" height="200" width="500" src="https://user-images.githubusercontent.com/97798047/163739860-296436b7-7247-4c86-9849-930bd221ee8c.png">
-
 ## Detalhes do Projeto
 
 Desenvolver uma aplicação que exibirá um cardápio.
@@ -14,6 +11,10 @@ o valor do produto;
 uma breve descrição sobre o produto;
 Com ela também poderemos adicionar novos produto, alterar e excluir.
 Essa aplicação consistirá em um CRUD completo no backend em nodeJs, utilizando o framework express, além de introduzir novos aspectos como as camadas de routes e service que, em conjunto com o controller, deixarão a nossa aplicação mais organizada e de fácil manutenção.
+
+<img align="center" alt="TeamShirt" height="200" width="500" src="https://user-images.githubusercontent.com/97798047/163739821-5ce30013-4947-4837-865c-a20720e1c38b.png">
+
+<img align="center" alt="TeamShirt" height="200" width="500" src="https://user-images.githubusercontent.com/97798047/163739860-296436b7-7247-4c86-9849-930bd221ee8c.png">
 
 ## <h1> <i>Stacks✔️<i></h1>
  
