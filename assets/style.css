@@ -16,7 +16,6 @@ html {
     width: 100%;
     min-height: 100vh;
     overflow: auto;
-    /* background-color: #0000004d; */
     background: linear-gradient(-45deg, #072227, #35858B, #00ADB5, #EEEEEE);
     background-size: 300% 200%;
     animation: colors 15s ease-in infinite;
