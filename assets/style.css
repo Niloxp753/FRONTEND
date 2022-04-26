@@ -21,7 +21,7 @@ html {
     animation: colors 15s ease-in infinite;
 }
 
-.Home {
+.home {
     position: relative;
     min-height: calc(100vh - 60px);
     margin: 15px;
@@ -40,7 +40,7 @@ header {
     animation: colors 15s ease-in infinite;
 }
 
-.Home>h2 {
+.home>h2 {
     display: flex;
     justify-content: space-around;
     font-weight: 600;
@@ -50,7 +50,7 @@ header {
     text-shadow: 2px 2px 2px #ffffff;
 }
 
-.Home__cardCreate {
+.home-card-create {
     background: #cccbcb;
     border-radius: 10px;
     padding: 10px;
@@ -65,12 +65,12 @@ header {
     align-items: center;
 }
 
-.Home__cardCreate:hover {
+.home-card-create:hover {
     transform: scale(1.1);
 }
 
 
-.Home__container {
+.home-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -78,31 +78,31 @@ header {
 }
 
 @media (max-width: 350px) {
-    .Home__container {
+    .home-container {
         justify-content: unset;
     }
 }
 
-.camisaLista {
+.camisa-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 25px 50px;
 }
 
 @media (max-width: 1220px) {
-    .camisaLista {
+    .camisa-list {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 840px) {
-    .camisaLista {
+    .camisa-list {
         grid-template-columns: 1fr;
     }
 }
 
-.CamisaCardItem,
-.CamisaListaItem {
+.camisa-card-item,
+.camisa-list-item {
     background: #cccbcb;
     border-radius: 10px;
     padding: 10px;
@@ -112,21 +112,21 @@ header {
     box-shadow: 10px 5px 5px #000;
 }
 
-.CamisaCardItem:hover,
-.CamisaListaItem:hover {
+.camisa-card-item:hover,
+.camisa-list-item:hover {
     transform: scale(1.1);
 }
 
-.CamisaCardItem {
+.camisa-card-item {
     margin: 20px 0;
     width: 315px;
 }
 
 @media (max-width: 375px) {
 
-    .CamisaCardItem,
-    .CamisaListaItem,
-    .Home__cardCreate {
+    .camisa-card-item,
+    .camisa-list-item,
+    .home-card-create {
         height: 180px;
         width: 315px;
     }
@@ -152,44 +152,37 @@ header {
     }
 }
 
-.CamisaCardItem>div,
-.CamisaListaItem>div {
+.camisa-card-item>div,
+.camisa-list-item>div {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
 }
 
-.CamisaCardItem__modelo,
-.CamisaListaItem__modelo {
+.camisa-card-item-modelo,
+.camisa-list-item-modelo {
     font-size: 1.5em;
     font-weight: 700;
     line-height: 100%;
     text-shadow: 2px 2px 2px #fff;
 }
 
-.CamisaCardItem__descricao,
-.CamisaListaItem__descricao {
+.camisa-card-item-descricao,
+.camisa-list-item-descricao {
     font-size: 0.85em;
     list-style: none;
 }
 
-.CamisaCardItem__preco,
-.CamisaListaItem__preco {
+.camisa-card-item-preco,
+.camisa-list-item-preco {
     color: #ffffff;
     text-shadow: 2px 2px 2px #000;
 }
 
-.CamisaListaItem__foto,
-.CamisaCardItem__foto {
+.camisa-list-item-foto,
+.camisa-card-item-foto {
     height: 180px;
     margin-right: -60px;
-}
-
-.camisa-escolhida-espaco {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem;
 }
 
 #search-input {
@@ -198,6 +191,7 @@ header {
     border: none;
     border: 2px solid #fff;
     border-radius: .2rem;
+    font-size: 1rem;
     outline: none;
 }
 
@@ -208,7 +202,6 @@ header {
     color: #000000;
     font-weight: 550;
     border-radius: 0.2rem;
-    margin-top: 0.5rem;
     cursor: pointer;
     font-size: 1rem;
     text-align: center;
@@ -239,14 +232,7 @@ header {
     text-shadow: 2px 2px 2px #000;
 }
 
-#camisa-escolhida-input-espaco {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-.Header {
+.header {
     max-width: 1110px;
     margin: 10px auto 25px auto;
     position: relative;
@@ -259,6 +245,7 @@ header {
     justify-content: space-between;
     align-items: center;
     margin: 20px 0 35px 0;
+
 }
 
 .Logo {
@@ -271,7 +258,7 @@ header {
     height: 45px;
 }
 
-.Logo__titulo {
+.logo-title {
     position: absolute;
     left: 65px;
     font-weight: 700;
@@ -280,58 +267,30 @@ header {
     
 }
 
-.Logo__icone {
+.logo-icon {
     position: absolute;
     left: -10px;
     top: -6px;
     filter: invert(1);
 }
 
-.Sacola {
-    position: relative;
-}
-
-.Sacola__icone {
-    cursor: pointer;
-}
-
-.Sacola__icone:hover {
-    filter: invert(1);
-}
-
-.Sacola__badge {
-    background-color: #770909;
-    width: 20px;
-    height: 20px;
-    text-align: center;
-    vertical-align: middle;
-    position: absolute;
-    color: #ffffff;
-    font-size: 0.9rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    bottom: 0;
-    right: 0;
-}
 
 @media (max-width: 1220px) {
-    .Header {
+    .header {
         margin: 10px auto 25px auto;
         max-width: 840px;
     }
 }
 
 @media (max-width: 840px) {
-    .Header {
+    .header {
         margin: 10px auto 25px auto;
         max-width: 360px;
     }
 }
 
 @media (max-width: 400px) {
-    .Header {
+    .header {
         margin: 10px auto 25px auto;
         max-width: 320px;
     }
@@ -340,7 +299,7 @@ header {
         column-gap: 20px;
     }
 
-    .Logo__titulo {
+    .logo-title {
         font-size: 1.5em;
     }
 }
@@ -441,6 +400,14 @@ textarea {
     justify-content: flex-end;
 }
 
+.options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 25px auto;
+    max-width: 1110px;
+}
+
 .msg-alert {
     text-align: center;
     z-index: 1;
@@ -464,7 +431,7 @@ textarea {
 }
 
 
-.Acoes {
+.actions {
     display: flex;
     justify-content: space-around;
     width: 100%;
@@ -482,24 +449,24 @@ textarea {
     width: 48%;
 }
 
-.Acoes__editar {
+.actions-edit {
     color: #09097c;
     border: solid 1.5px #09097c;
     background-color: transparent;
 }
 
-.Acoes__editar:hover {
+.actions-edit:hover {
     color: #fff;
     background-color: #09097c;
 }
 
-.Acoes__apagar {
+.actions-delete {
     color: #770909;
     border: solid 1.5px #770909;
     background-color: transparent;
 }
 
-.Acoes__apagar:hover {
+.actions-delete:hover {
     color: #fff;
     background-color: #770909;
 }
@@ -520,13 +487,13 @@ textarea {
     font-size: 1.5rem;
 }
 
-.btns_delete {
+.btns-delete {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
 }
 
-.btn_delete {
+.btn-delete {
     background-color: transparent;
     padding: 0.5rem;
     font-size: 1.2rem;
@@ -536,23 +503,23 @@ textarea {
     cursor: pointer;
 }
 
-.btn_delete_no {
+.btn-delete-no {
     color: #770909;
     border: solid 1.5px #770909;
 }
 
-.btn_delete_no:hover {
+.btn-delete-no:hover {
     color: #fff;
     background-color: #770909;
 }
 
-.btn_delete_yes {
+.btn-delete-yes {
     color: #09097c;
     border: solid 1.5px #09097c;
 
 }
 
-.btn_delete_yes:hover {
+.btn-delete-yes:hover {
     color: #fff;
     background-color: #09097c;
 }
@@ -585,29 +552,27 @@ footer {
     }
 }
 
-.Header__opcoes {
+.search-space {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    gap: 20px;
+    gap: 25px;
 }
 
-.Menu_NavBar {
+.menu-nav {
     display: flex;
-    width: 100%;
     flex-direction: row;
     z-index: 2;
 }
 
-.Menu_icone {
-    margin-top: 5px;
-    filter: invert(1);
+.menu-icon {
+    filter: invert(0);
     cursor: pointer;
 }
 
-.Menu_icone:hover {
-    filter: invert(0);
+.menu-icon:hover {
+    filter: invert(1);
 }
 
 nav.menu-items {
@@ -624,7 +589,7 @@ nav.menu-items {
     text-align: center; 
 }
 
-#top_inicio {
+#top-init {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -636,19 +601,19 @@ nav.menu-items {
     cursor: pointer;
 }
 
-#btn_nav {
+#btn-nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 30px;
 }
 
-#top_inicio:hover {
+#top-init:hover {
     background-color: #04857a;
     color: #fff;
 }
 
-#top_criar {
+#top-create {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -660,7 +625,7 @@ nav.menu-items {
     cursor: pointer;
 }
 
-#top_criar:hover {
+#top-create:hover {
     background-color: #04857a;
     color: #fff;
 }

@@ -13,44 +13,43 @@
 
 <body>
 
-  <header class="Home__header Header">
+  <header class="header">
     <div class="row">
-      <div class="Header__logo Logo">
-        <img src="./assets/logo.png" width="70px" alt="Logo La Loja" class="Logo__icone" />
-        <span class="Logo__titulo"> Team Shirt </span>
+      <div class="logo">
+        <img src="./assets/logo.png" width="70px" alt="Logo da Loja" class="logo-icon" />
+        <span class="logo-title"> Team Shirt </span>
       </div>
-      <div class="Header__opcoes Opcoes">
-        <input type="text" id="search-input" placeholder="Digite o ID da camisa" />
-        <button class="search-button" onclick="findByIdCamisas()"><i class="bi bi-search"></i></button>
-        <!-- <div class="Opcoes__sacola Sacola">
-          <img src="./assets/icons/sacola.svg" width="40px" class="Sacola__icone" alt="Sacola de compras" />
-        </div> -->
-        <div class="Menu_NavBar">
-          <img src="./assets/icons/menu.png" width="36px" class="Menu_icone" alt="Menu">
+      <div class="search-space">
+        <div>
+          <input type="text" id="search-input" placeholder="Digite o ID da camisa" />
+          <button class="search-button" onclick="findByIdCamisas()"><i class="bi bi-search"></i></button>
+        </div>
+        <div class="menu-nav">
+          <img src="./assets/icons/menu.png" width="36px" class="menu-icon" alt="Menu">
         </div>
       </div>
     </div>
     <nav class="menu-items">
-      <div id="btn_nav">
-        <a id="top_inicio" href="/"> Inicio </a>
-        <a id="top_criar" onclick="abrirModal()"> Criar </a>
+      <div id="btn-nav">
+        <a id="top-init" href="/"> Inicio </a>
+        <a id="top-create" onclick="showModal()"> Criar </a>
       </div>
     </nav>
   </header>
-  <section class="Home">
+  <section class="options">
     <span class="msg-alert"></span>
     <div class="btns-list-cad">
       <a href="/" class="default-button list-all">Listar todas as camisas</a>
     </div>
+  </section>
+
+  <section class="home">
     <section class="modal-overlay" id="overlay">
-
       <div class="modal">
-
         <div class="modal-header">
           <h2 id="title-header-modal">Cadastrar uma camisa</h2>
-          <a class="close-modal" onclick="fecharModal()">X</a>
+          <a class="close-modal" onclick="closeModal()">X</a>
         </div>
-
         <div class="modal-body">
           <form>
             <input type="hidden" id="id">
@@ -68,23 +67,23 @@
       <div class="modal">
         <div class="modal-header">
           <h2 id="title-header-modal">Confirmação de deleção</h2>
-          <a onclick="fecharModalDelete()" class="close-modal">X</a>
+          <a onclick="closeModalDelete()" class="close-modal">X</a>
         </div>
         <div class="modal-body-delete">
           <p>Deseja realmente apagar essa camisa? </p>
-          <div class="btns_delete">
-            <button class="btn_delete_no btn_delete" onclick="fecharModalDelete()">Não</button>
-            <button class="btn_delete_yes btn_delete">Sim</button>
+          <div class="btns-delete">
+            <button class="btn-delete-no btn-delete" onclick="closeModalDelete()">Não</button>
+            <button class="btn-delete-yes btn-delete">Sim</button>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="Home__container">
-      <div class="camisaLista" id="camisaList">
-        <div class="Home__cardCreate" onclick="abrirModal()">
+    <div class="home-container">
+      <div class="camisa-list" id="camisa-list">
+        <div class="home-card-create" onclick="showModal()">
           <section class="button-modal-create">
-            <a class="fake-card" type="button" onclick="abrirModal()">
+            <a class="fake-card" type="button" onclick="showModal()">
               <img
                 src="https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/38/000000/external-plus-user-interface-tanah-basah-glyph-tanah-basah-2.png"
                 alt="Criar">
@@ -92,7 +91,7 @@
           </section>
         </div>
       </div>
-      <div id="camisaEscolhida"></div>
+      <div id="camisa-chosen"></div>
     </div>
     <footer>
       <p>All rights reserved <a target="_blank" href="https://github.com/Niloxp753">Danilo D. Dos Santos &copy;</a></p>

@@ -7,21 +7,21 @@ async function findAllCamisas() {
   const camisas = await response.json();
 
   camisas.forEach(function (camisa) {
-    document.querySelector("#camisaList").insertAdjacentHTML(
+    document.querySelector("#camisa-list").insertAdjacentHTML(
       "beforeend",
       `
-    <div class="CamisaListaItem" id="CamisaListaItem_${camisa._id}">
+    <div class="camisa-list-item" id="camisa-list-item-${camisa._id}">
       <div>
-        <div class="CamisaListaItem__modelo">${camisa.modelo}</div>
-        <div class="CamisaListaItem__preco">${camisa.preco}</div>
-        <li class="CamisaListaItem__descricao">${camisa.descricao}</li>
+        <div class="camisa-list-item-modelo">${camisa.modelo}</div>
+        <div class="camisa-list-item-preco">${camisa.preco}</div>
+        <li class="camisa-list-item-descricao">${camisa.descricao}</li>
 
-        <div class="CamisaListaItem__acoes Acoes">
-          <button class="Acoes__editar btn" onclick="abrirModal('${camisa._id}')" >Editar</button>
-          <button class="Acoes__apagar btn" onclick="abrirModalDelete('${camisa._id}')">Apagar</button>
+        <div class="actions">
+          <button class="actions-edit btn" onclick="showModal('${camisa._id}')" >Editar</button>
+          <button class="actions-delete btn" onclick="showModalDelete('${camisa._id}')">Apagar</button>
         </div>
       </div>
-         <img class="CamisaListaItem__foto" src="${camisa.foto}"
+         <img class="camisa-list-item-foto" src="${camisa.foto}"
           alt="Camisa de ${camisa.modelo}" />
     </div>
     `
@@ -38,7 +38,7 @@ async function findByIdCamisas() {
     localStorage.setItem("message", "Digite um ID para pesquisar!");
     localStorage.setItem("type", "danger");
 
-    closeMessageAlert();
+    showMessageAlert();
     return;
   }
 
@@ -52,26 +52,26 @@ async function findByIdCamisas() {
     return;
   }
   document.querySelector(".list-all").style.display = "block";
-  document.querySelector(".camisaLista").style.display = "none";
-  const camisaEscolhidaDiv = document.querySelector("#camisaEscolhida");
+  document.querySelector(".camisa-list").style.display = "none";
+  const chosenCamisaDiv = document.querySelector("#camisa-chosen");
 
-  camisaEscolhidaDiv.innerHTML = `
-  <div class="CamisaCardItem" id="CamisaListaItem_${camisa._id}">
+  chosenCamisaDiv.innerHTML = `
+  <div class="camisa-card-item" id="camisa-list-item_${camisa._id}">
     <div>
-      <div class="CamisaCardItem__modelo">${camisa.modelo}</div>
-      <div class="CamisaCardItem__preco">${camisa.preco}</div>
-      <div class="CamisaCardItem__descricao">${camisa.descricao}</div>
-      <div class="CamisaListaItem__acoes Acoes">
-        <button class="Acoes__editar btn" onclick="abrirModal('${camisa._id}')">Editar</button>
-        <button class="Acoes__apagar btn" onclick="abrirModalDelete('${camisa._id}')">Apagar</button>
+      <div class="camisa-card-item-modelo">${camisa.modelo}</div>
+      <div class="camisa-card-item-preco">${camisa.preco}</div>
+      <div class="camisa-card-item-descricao">${camisa.descricao}</div>
+      <div class="actions">
+        <button class="actions-edit btn" onclick="showModal('${camisa._id}')">Editar</button>
+        <button class="actions-delete btn" onclick="showModalDelete('${camisa._id}')">Apagar</button>
       </div>
     </div>
-     <img class="CamisaCardItem__foto" src="${camisa.foto}"
+     <img class="camisa-card-item-foto" src="${camisa.foto}"
       alt="Camisa de ${camisa.modelo}" />
 </div>`;
 }
 
-async function abrirModal(id = null) {
+async function showModal(id = null) {
   if (id != null) {
     document.querySelector("#title-header-modal").innerText =
       "Atualizar uma Camisa";
@@ -96,7 +96,7 @@ async function abrirModal(id = null) {
   document.querySelector("#overlay").style.display = "flex";
 }
 
-function fecharModal() {
+function closeModal() {
   document.querySelector(".modal-overlay").style.display = "none";
 
   document.querySelector("#modelo").value = "";
@@ -152,21 +152,21 @@ async function submitCamisa() {
   }
 
   document.location.reload(true);
-  
-  fecharModal();
+
+  closeModal();
 }
 
-function abrirModalDelete(id) {
+function showModalDelete(id) {
   document.querySelector("#overlay-delete").style.display = "flex";
 
-  const btnSim = document.querySelector(".btn_delete_yes");
+  const btnSim = document.querySelector(".btn-delete-yes");
 
   btnSim.addEventListener("click", function () {
     deleteCamisa(id);
   });
 }
 
-function fecharModalDelete() {
+function closeModalDelete() {
   document.querySelector("#overlay-delete").style.display = "none";
 }
 
@@ -180,20 +180,20 @@ async function deleteCamisa(id) {
   });
 
   const result = await response.json();
- 
+
   localStorage.setItem("message", result.message);
   localStorage.setItem("type", "success");
 
   document.location.reload(true);
 
-  fecharModalDelete();
+  closeModalDelete();
 }
 
 let toggle = false;
-const img = document.querySelector(".Menu_NavBar");
+const img = document.querySelector(".menu-nav");
 const nav = document.querySelector(".menu-items");
 const section = document.querySelector("section");
-const criar = document.querySelector("#top_criar");
+const criar = document.querySelector("#top-create");
 
 img.addEventListener("click", () => {
   handleModal();
@@ -207,7 +207,7 @@ img.addEventListener("click", () => {
       toggle = !toggle;
       nav.style.display = "none";
       section.style.opacity = "1";
-      img.style.position = "relative";
+      img.style.position = "fixed";
     });
   } else {
     nav.style.display = "none";
