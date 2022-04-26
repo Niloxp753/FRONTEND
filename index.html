@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./assets/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+  <link rel="shortcut icon" type="image/png" href="./assets/logo.png">
   <title>Team Shirt</title>
 </head>
 
@@ -18,9 +20,11 @@
         <span class="Logo__titulo"> Team Shirt </span>
       </div>
       <div class="Header__opcoes Opcoes">
-        <div class="Opcoes__sacola Sacola">
+        <input type="text" id="search-input" placeholder="Digite o ID da camisa" />
+        <button class="search-button" onclick="findByIdCamisas()"><i class="bi bi-search"></i></button>
+        <!-- <div class="Opcoes__sacola Sacola">
           <img src="./assets/icons/sacola.svg" width="40px" class="Sacola__icone" alt="Sacola de compras" />
-        </div>
+        </div> -->
         <div class="Menu_NavBar">
           <img src="./assets/icons/menu.png" width="36px" class="Menu_icone" alt="Menu">
         </div>
@@ -34,7 +38,10 @@
     </nav>
   </header>
   <section class="Home">
-
+    <span class="msg-alert"></span>
+    <div class="btns-list-cad">
+      <a href="/" class="default-button list-all">Listar todas as camisas</a>
+    </div>
     <section class="modal-overlay" id="overlay">
 
       <div class="modal">
@@ -51,7 +58,7 @@
             <input type="text" name="preco" id="preco" placeholder="Preço da Camisa (Ex: R$ 199,99)">
             <textarea type="text" name="descricao" id="descricao" placeholder="Descrição da Camisa" rows="5"></textarea>
             <input type="text" name="foto" id="foto" placeholder="Link da Imagem (Ex: http://)">
-            <button id="button-form-modal" type="submit" onclick="createCamisa()">Cadastrar</button>
+            <button id="button-form-modal" type="submit" onclick="submitCamisa()">Cadastrar</button>
           </form>
         </div>
       </div>
@@ -73,17 +80,6 @@
       </div>
     </section>
 
-    <h2>Pesquisar Camisa</h2>
-    <div class="camisa-escolhida-espaco">
-      <div id="camisa-escolhida-input-espaco">
-        <input type="number" id="idCamisa" placeholder="Digite o ID da camisa e clique em 'Escolher'" />
-        <button class="default-button" onclick="findByIdCamisas()">ESCOLHER</button>
-      </div>
-      <div id="camisaEscolhida">
-      </div>
-    </div>
-
-    <h2>Camisas Disponíveis</h2>
     <div class="Home__container">
       <div class="camisaLista" id="camisaList">
         <div class="Home__cardCreate" onclick="abrirModal()">
@@ -96,6 +92,7 @@
           </section>
         </div>
       </div>
+      <div id="camisaEscolhida"></div>
     </div>
     <footer>
       <p>All rights reserved <a target="_blank" href="https://github.com/Niloxp753">Danilo D. Dos Santos &copy;</a></p>

@@ -1,7 +1,8 @@
 const baseURL = "http://localhost:3000/camisas";
+const msgAlert = document.querySelector(".msg-alert");
 
 async function findAllCamisas() {
-  const response = await fetch(`${baseURL}/todas-camisas`);
+  const response = await fetch(`${baseURL}/all-camisas`);
 
   const camisas = await response.json();
 
@@ -9,15 +10,15 @@ async function findAllCamisas() {
     document.querySelector("#camisaList").insertAdjacentHTML(
       "beforeend",
       `
-    <div class="CamisaListaItem" id="CamisaListaItem_${camisa.id}">
+    <div class="CamisaListaItem" id="CamisaListaItem_${camisa._id}">
       <div>
         <div class="CamisaListaItem__modelo">${camisa.modelo}</div>
         <div class="CamisaListaItem__preco">${camisa.preco}</div>
         <li class="CamisaListaItem__descricao">${camisa.descricao}</li>
 
         <div class="CamisaListaItem__acoes Acoes">
-          <button class="Acoes__editar btn" onclick="abrirModal(${camisa.id})" >Editar</button>
-          <button class="Acoes__apagar btn" onclick="abrirModalDelete(${camisa.id})">Apagar</button>
+          <button class="Acoes__editar btn" onclick="abrirModal('${camisa._id}')" >Editar</button>
+          <button class="Acoes__apagar btn" onclick="abrirModalDelete('${camisa._id}')">Apagar</button>
         </div>
       </div>
          <img class="CamisaListaItem__foto" src="${camisa.foto}"
@@ -28,31 +29,47 @@ async function findAllCamisas() {
   });
 }
 
-async function findByIdCamisas() {
-  const id = document.querySelector("#idCamisa").value;
+findAllCamisas();
 
-  const response = await fetch(`${baseURL}/camisa/${id}`);
+async function findByIdCamisas() {
+  const id = document.querySelector("#search-input").value;
+
+  if (id == "") {
+    localStorage.setItem("message", "Digite um ID para pesquisar!");
+    localStorage.setItem("type", "danger");
+
+    closeMessageAlert();
+    return;
+  }
+
+  const response = await fetch(`${baseURL}/one-camisa/${id}`);
   const camisa = await response.json();
 
+  if (camisa.message != undefined) {
+    localStorage.setItem("message", camisa.message);
+    localStorage.setItem("type", "danger");
+    showMessageAlert();
+    return;
+  }
+  document.querySelector(".list-all").style.display = "block";
+  document.querySelector(".camisaLista").style.display = "none";
   const camisaEscolhidaDiv = document.querySelector("#camisaEscolhida");
 
   camisaEscolhidaDiv.innerHTML = `
-  <div class="CamisaCardItem" id="CamisaListaItem_${camisa.id}">
+  <div class="CamisaCardItem" id="CamisaListaItem_${camisa._id}">
     <div>
       <div class="CamisaCardItem__modelo">${camisa.modelo}</div>
       <div class="CamisaCardItem__preco">${camisa.preco}</div>
       <div class="CamisaCardItem__descricao">${camisa.descricao}</div>
       <div class="CamisaListaItem__acoes Acoes">
-        <button class="Acoes__editar btn" onclick="abrirModal(${camisa.id})">Editar</button>
-        <button class="Acoes__apagar btn" onclick="abrirModalDelete(${camisa.id})">Apagar</button>
+        <button class="Acoes__editar btn" onclick="abrirModal('${camisa._id}')">Editar</button>
+        <button class="Acoes__apagar btn" onclick="abrirModalDelete('${camisa._id}')">Apagar</button>
       </div>
     </div>
      <img class="CamisaCardItem__foto" src="${camisa.foto}"
       alt="Camisa de ${camisa.modelo}" />
 </div>`;
 }
-
-findAllCamisas();
 
 async function abrirModal(id = null) {
   if (id != null) {
@@ -61,14 +78,14 @@ async function abrirModal(id = null) {
 
     document.querySelector("#button-form-modal").innerText = "Atualizar";
 
-    const response = await fetch(`${baseURL}/camisa/${id}`);
+    const response = await fetch(`${baseURL}/one-camisa/${id}`);
     const camisa = await response.json();
 
     document.querySelector("#modelo").value = camisa.modelo;
     document.querySelector("#preco").value = camisa.preco;
     document.querySelector("#descricao").value = camisa.descricao;
     document.querySelector("#foto").value = camisa.foto;
-    document.querySelector("#id").value = camisa.id;
+    document.querySelector("#id").value = camisa._id;
   } else {
     document.querySelector("#title-header-modal").innerText =
       "Cadastrar uma Camisa";
@@ -88,7 +105,7 @@ function fecharModal() {
   document.querySelector("#foto").value = "";
 }
 
-async function createCamisa() {
+async function submitCamisa() {
   const id = document.querySelector("#id").value;
   const modelo = document.querySelector("#modelo").value;
   const preco = document.querySelector("#preco").value;
@@ -103,9 +120,10 @@ async function createCamisa() {
     foto,
   };
 
-  const modEdicaoAtivado = id > 0;
+  const modEdicaoAtivado = id != "";
 
-  const endpoint = baseURL + (modEdicaoAtivado ? `/update/${id}` : `/create`);
+  const endpoint =
+    baseURL + (modEdicaoAtivado ? `/update-camisa/${id}` : `/create-camisa`);
 
   const response = await fetch(endpoint, {
     method: modEdicaoAtivado ? "put" : "post",
@@ -118,36 +136,23 @@ async function createCamisa() {
 
   const novaCamisa = await response.json();
 
-  const html = `
-  <div class="CamisaListaItem" id="CamisaListaItem_${camisa.id}">
-    <div>
-    <div class="Home__cardCreate" onclick="abrirModal()">
-          <section class="button-modal-create">
-            <a class="fake-card" type="button" onclick="abrirModal()">
-              <img
-                src="https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/38/000000/external-plus-user-interface-tanah-basah-glyph-tanah-basah-2.png"
-                alt="Criar">
-            </a>
-          </section>
-        </div>
-      <div class="CamisaListaItem__modelo">${novaCamisa.modelo}</div>
-      <div class="CamisaListaItem__preco">${novaCamisa.preco}</div>
-      <li class="CamisaListaItem__descricao">${novaCamisa.descricao}</li>
-      <div class="CamisaListaItem__acoes Acoes">
-        <button class="Acoes__editar btn" onclick="abrirModal(${camisa.id})">Editar</button>
-        <button class="Acoes__apagar btn" onclick="abrirModalDelete(${camisa.id})">Apagar</button>
-      </div>
-    </div>
-      <img class="CamisaListaItem__foto" src="${novaCamisa.foto}"
-        alt="Camisa de ${novaCamisa.modelo}" />
-</div>`;
-
-  if (modEdicaoAtivado) {
-    document.querySelector(`CamisaListaItem_${id}`).outerHTML = html;
-  } else {
-    document.querySelector("#camisaList").insertAdjacentHTML("beforeend", html);
+  if (novaCamisa.message != undefined) {
+    localStorage.setItem("message", novaCamisa.message);
+    localStorage.setItem("type", "danger");
+    showMessageAlert();
+    return;
   }
 
+  if (modEdicaoAtivado) {
+    localStorage.setItem("message", "Camisa atualizada com sucesso!");
+    localStorage.setItem("type", "success");
+  } else {
+    localStorage.setItem("message", "Camisa criada com sucesso!");
+    localStorage.setItem("type", "success");
+  }
+
+  document.location.reload(true);
+  
   fecharModal();
 }
 
@@ -166,7 +171,7 @@ function fecharModalDelete() {
 }
 
 async function deleteCamisa(id) {
-  const response = await fetch(`${baseURL}/delete/${id}`, {
+  const response = await fetch(`${baseURL}/delete-camisa/${id}`, {
     method: "delete",
     headers: {
       "Content-Type": "application/json",
@@ -175,10 +180,13 @@ async function deleteCamisa(id) {
   });
 
   const result = await response.json();
-  alert(result.message);
-  fecharModalDelete();
+ 
+  localStorage.setItem("message", result.message);
+  localStorage.setItem("type", "success");
 
   document.location.reload(true);
+
+  fecharModalDelete();
 }
 
 let toggle = false;
@@ -196,7 +204,7 @@ img.addEventListener("click", () => {
     img.style.zIndex = "2";
     img.style.position = "fixed";
     criar.addEventListener("click", () => {
-      toggle = !toggle
+      toggle = !toggle;
       nav.style.display = "none";
       section.style.opacity = "1";
       img.style.position = "relative";
@@ -211,3 +219,19 @@ img.addEventListener("click", () => {
 function handleModal() {
   toggle = !toggle;
 }
+
+function closeMessageAlert() {
+  setTimeout(function () {
+    msgAlert.innerText = "";
+    msgAlert.classList.remove(localStorage.getItem("type"));
+    localStorage.clear();
+  }, 3000);
+}
+
+function showMessageAlert() {
+  msgAlert.innerText = localStorage.getItem("message");
+  msgAlert.classList.add(localStorage.getItem("type"));
+  closeMessageAlert();
+}
+
+showMessageAlert();

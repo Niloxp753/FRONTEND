@@ -192,12 +192,31 @@ header {
     padding: 2rem;
 }
 
-#idCamisa {
-    padding: .5rem;
+#search-input {
+    padding: 0.5rem;
     width: 315px;
     border: none;
+    border: 2px solid #fff;
     border-radius: .2rem;
     outline: none;
+}
+
+.search-button {
+    background-color: transparent;
+    border: 2px solid #000000;
+    padding: 0.5rem;
+    color: #000000;
+    font-weight: 550;
+    border-radius: 0.2rem;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.search-button:hover {
+    background-color: #06767c;
+    color: #ffffff;
 }
 
 .default-button {
@@ -229,14 +248,14 @@ header {
 
 .Header {
     max-width: 1110px;
-    margin: 0 auto 25px auto;
+    margin: 10px auto 25px auto;
     position: relative;
 }
 
 .row {
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 100vw;
     justify-content: space-between;
     align-items: center;
     margin: 20px 0 35px 0;
@@ -299,21 +318,21 @@ header {
 
 @media (max-width: 1220px) {
     .Header {
-        margin: 0 auto 25px auto;
+        margin: 10px auto 25px auto;
         max-width: 840px;
     }
 }
 
 @media (max-width: 840px) {
     .Header {
-        margin: 0 auto 25px auto;
+        margin: 10px auto 25px auto;
         max-width: 360px;
     }
 }
 
 @media (max-width: 400px) {
     .Header {
-        margin: 0 auto 25px auto;
+        margin: 10px auto 25px auto;
         max-width: 320px;
     }
 
@@ -422,6 +441,29 @@ textarea {
     justify-content: flex-end;
 }
 
+.msg-alert {
+    text-align: center;
+    z-index: 1;
+    font-weight: 600;
+}
+
+.success {
+    background-color: #a4ffa4;
+    color: #006905;
+    border: solid 1px #006905;
+    padding: 0.8rem;
+    border-radius: 0.3rem;
+}
+
+.danger {
+    background-color: #ffa4a4;
+    color: #690000;
+    border: solid 1px #690000;
+    padding: 0.8rem;
+    border-radius: 0.3rem;
+}
+
+
 .Acoes {
     display: flex;
     justify-content: space-around;
@@ -521,7 +563,8 @@ footer {
     align-items: center;
     font-weight: 550;
     font-size: large;
-    position: relative;
+    position: absolute;
+    width: 100%;
     min-height: 60px;
     border-radius: 20px;
     color: #000;
@@ -545,7 +588,7 @@ footer {
 .Header__opcoes {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     gap: 20px;
 }
@@ -620,4 +663,14 @@ nav.menu-items {
 #top_criar:hover {
     background-color: #04857a;
     color: #fff;
+}
+
+.list-all {
+    text-align: center;
+    display: none;
+}
+
+.btns-list-cad {
+    justify-content: center;
+    display: flex;
 }
