@@ -193,12 +193,15 @@ let toggle = false;
 const img = document.querySelector(".menu-nav");
 const nav = document.querySelector(".menu-items");
 const section = document.querySelector("section");
+const divHomeContainer = document.querySelector(".home-container");
 const criar = document.querySelector("#top-create");
 
 img.addEventListener("click", () => {
   handleModal();
+  console.log(toggle);
   if (toggle) {
     section.style.opacity = "0.5";
+    divHomeContainer.style.opacity = "0.5";
     nav.style.display = "flex";
     nav.style.zIndex = "1";
     img.style.zIndex = "2";
@@ -206,12 +209,14 @@ img.addEventListener("click", () => {
     criar.addEventListener("click", () => {
       toggle = !toggle;
       nav.style.display = "none";
+      divHomeContainer.style.opacity = "1";
       section.style.opacity = "1";
       img.style.position = "fixed";
     });
   } else {
     nav.style.display = "none";
     section.style.opacity = "1";
+    divHomeContainer.style.opacity = "1";
     img.style.position = "relative";
   }
 });

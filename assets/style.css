@@ -32,7 +32,7 @@ html {
 header {
     display: flex;
     width: 100vw;
-    
+
     background-size: 300% 200%;
     border-radius: 20px;
     margin-top: 55px;
@@ -141,7 +141,7 @@ header {
     }
 }
 
-@media (max-width: 420px){
+@media (max-width: 420px) {
     footer p {
         display: flex;
         justify-content: center;
@@ -264,7 +264,7 @@ header {
     font-weight: 700;
     font-size: 2.2rem;
     text-shadow: 2px 2px 2px #ffffff;
-    
+
 }
 
 .logo-icon {
@@ -586,7 +586,7 @@ nav.menu-items {
     top: 0;
     z-index: 1;
     right: 0;
-    text-align: center; 
+    text-align: center;
 }
 
 #top-init {
