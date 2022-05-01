@@ -14,7 +14,6 @@ Essa aplicação consistirá em um CRUD completo no backend em nodeJs, utilizand
 
 ## <img align="center" alt="TeamShirt" height="200" width="500" src="https://user-images.githubusercontent.com/97798047/163739821-5ce30013-4947-4837-865c-a20720e1c38b.png">
 
-<img align="center" alt="TeamShirt" height="200" width="500" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg">
 
 ## <h1> <i>Stacks✔️<i></h1>
  
