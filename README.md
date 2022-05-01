@@ -23,7 +23,7 @@ Essa aplicação consistirá em um CRUD completo no backend em nodeJs, utilizand
   <img align="center" alt="HTML" height="40" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
   <img align="center" alt="CSS" height="40" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
   <img align="center" alt="nodejs" height="40" width="40" src="https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg">
-  <img align="center" alt="express" height="40" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"> 
+  <img align="center" alt="REACT" height="40" width="40" src="https://www.flaticon.com/free-icon/physics_1126012?term=react&page=1&position=3&page=1&position=3&related_id=1126012&origin=search"> 
  </div> </p>
  
  
