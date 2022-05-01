@@ -14,6 +14,7 @@ Essa aplicação consistirá em um CRUD completo no backend em nodeJs, utilizand
 
 ## <img align="center" alt="TeamShirt" height="200" width="500" src="https://user-images.githubusercontent.com/97798047/163739821-5ce30013-4947-4837-865c-a20720e1c38b.png">
 
+## <img align="center" alt="TeamShirt" height="200" width="500" src="https://user-images.githubusercontent.com/97798047/166138499-9eebcbcd-4c70-4174-8ca5-76cda368c64c.png">
 
 ## <h1> <i>Stacks✔️<i></h1>
  
@@ -22,7 +23,7 @@ Essa aplicação consistirá em um CRUD completo no backend em nodeJs, utilizand
   <img align="center" alt="HTML" height="40" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
   <img align="center" alt="CSS" height="40" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
   <img align="center" alt="nodejs" height="40" width="40" src="https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg">
-  <img align="center" alt="express" height="40" width="40" src="https://user-images.githubusercontent.com/97798047/166138499-9eebcbcd-4c70-4174-8ca5-76cda368c64c.png"> 
+  <img align="center" alt="express" height="40" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"> 
  </div> </p>
  
  
